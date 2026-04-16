@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO-SYNTHESIS | 미래 인터페이스</title>
+    <style>
+        /* 폰트 설정 및 기본 스타일 */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+        :root {
+            --bg-color: #0a0a1a;
+            --primary-color: #00ffff; /* 사이버 블루 */
+            --secondary-color: #ff00ff; /* 마젠타 */
+            --text-color: #e0e0ff;
+            --card-bg: rgba(15, 15, 30, 0.7);
+            --border-glow: 0 0 8px var(--primary-color), 0 0 16px var(--primary-color);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 헤더 및 네비게이션 */
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+            box-shadow: var(--border-glow);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8em;
+            color: var(--primary-color);
+            text-shadow: var(--border-glow);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 1.1em;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            text-shadow: var(--border-glow);
+        }
+
+        /* 메인 컨텐츠 레이아웃 */
+        main {
+            padding: 60px 5%;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            margin-bottom: 50px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: var(--border-glow);
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5em;
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #a0a0ff;
+        }
+
+        /* 기능 카드 섹션 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--border-glow);
+        }
+
+        .feature-card h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            border-bottom: 1px dashed var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        /* 푸터 */
+        footer {
+            text-align: center;
+            padding: 20px 5%;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* 미디어 쿼리 (반응형 조정) */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 10px 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NEO-SYNTHESIS</div>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#features">FEATURES</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>FUTURE INTERFACE</h1>
+            <p>차세대 데이터와 연결을 위한 초연결 시스템. 미지의 가능성을 탐험하세요.</p>
+        </section>
+
+        <section class="features" id="features">
+            <div class="feature-card">
+                <h2>Quantum Link</h2>
+                <p>초고속 데이터 전송을 통해 지연 없는 실시간 연결을 제공합니다. 우주의 경계를 넘어 정보를 즉시 공유합니다.</p>
+            </div>
+            <div class="feature-card">
+                <h2>A.I. Core</h2>
+                <p>고도화된 인공지능 엔진이 복잡한 문제를 해결하고 개인화된 경험을 설계합니다. 미래의 의사결정 시스템입니다.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Holo-Display</h2>
+                <p>공간을 초월하는 홀로그램 인터페이스를 통해 직관적이고 몰입감 높은 시각적 경험을 제공합니다.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Cyber Security</h2>
+                <p>최첨단 암호화 기술로 모든 연결을 보호합니다. 당신의 데이터는 가장 안전한 영역에 보관됩니다.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2077 NEO-SYNTHESIS. All Rights Reserved. // System Online</p>
+    </footer>
+
+</body>
+</html>

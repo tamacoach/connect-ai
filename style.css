@@ -1,0 +1,197 @@
+:root {
+    --bg-dark: #050510;
+    --neon-cyan: #00f2ff;
+    --neon-magenta: #ff00ff;
+    --text-main: #e0e0e0;
+    --card-bg: rgba(20, 20, 35, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* 우주 배경 효과 */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    z-index: -2;
+}
+
+/* 스캔라인 효과 */
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.3;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    background: radial-gradient(circle at center, rgba(0, 242, 255, 0.05) 0%, transparent 70%);
+}
+
+.neon-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px var(--neon-cyan),
+        0 0 42px var(--neon-cyan),
+        0 0 82px var(--neon-cyan);
+    animation: pulse 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.neon-button {
+    padding: 1rem 3rem;
+    font-family: 'Orbitron', sans-serif;
+    background: transparent;
+    border: 2px solid var(--neon-magenta);
+    color: var(--neon-magenta);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 10px var(--neon-magenta);
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-button:hover {
+    background: var(--neon-magenta);
+    color: white;
+    box-shadow: 0 0 40px var(--neon-magenta);
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 5rem 5%;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 300px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+.card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1rem;
+    color: var(--neon-cyan);
+}
+
+footer {
+    text-align: center;
+    padding: 3rem;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@keyframes pulse {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan);
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+    }
+}
+
+@media (max-width: 768px) {
+    .neon-title { font-size: 2.5rem; }
+    nav ul { display: none; }
+}
